@@ -254,11 +254,9 @@ def card_game():
         sleep(0.25)
         print(".", end="", flush=True)
       sleep(0.25)
-    
     def pick_delay():
       delay_print("Picking cards")
       delay()
-    
     def pick_delay_extra():
       delay_print("Picking card")
       delay()
