@@ -11,7 +11,7 @@ def delay_print(text):
     print(char, end="", flush=True)
     sleep(.03)
 
-# Waits for input (enter key) and then calls 'delay_print'
+# Waits for enter key input and then calls 'delay_print'
 def delay_input(text):
   delay_print(text)
   input("")
@@ -51,7 +51,7 @@ print("\n")
 # Intro/Instructions
 delay_input("Welcome, %s and %s, to the card game. Press 'enter' to continue: " % (player1, player2))
 print("\n")
-delay_print("You will both compete in picking from 8 random cards for 5 rounds.")
+delay_print("You may both compete in randomly picking from 8 cards for the chosen number of rounds.")
 print("\n")
 delay_print("The sum of the cards will be added to your score.")
 print("\n")
@@ -61,14 +61,24 @@ delay_print("If the sum is even, 5 points are taken away.")
 print("\n")
 delay_print("If a double is picked, you may pick a bonus card.")
 print("\n")
-delay_print("If there is a tie, there will be an extra round.")
-print("\n")
-
-delay_input("Press 'enter' to start: ")
+delay_print("If there is a tie at end of the game, you may play an extra round.")
 print("\n")
 
 def card_game():
-  
+
+  while True:
+    try:
+      delay_print("How many rounds do you want to play?: ")
+      chosen_rounds = int(input(""))
+      break
+    except Exception:
+      delay_print("Invalid input.")
+      print("\n")
+    
+  print("\n")
+  delay_input("Press 'enter' to start: ")
+  print("\n")
+
   # Main variables - will be reset if the users want to play again
   global player1_total
   global player2_total
@@ -278,7 +288,9 @@ def card_game():
     return points
   
   # Game will run for 5 rounds, so 5 loops
-  for x in range(5):
+  
+  
+  for x in range(chosen_rounds):
     main_game()
     
   # If there is a tie, the game will continue until the total score of both players are different
