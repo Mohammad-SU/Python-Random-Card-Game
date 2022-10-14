@@ -1,10 +1,4 @@
 # Card Game
-# If it doesn't work, please run this program on https://www.onlinegdb.com/ (make sure to change the language to Python 3)
-
-# Password is "12345"
-
-# Things that may be added in the future:
-# Leaderboard and colours 
 
 # Import Python libraries
 from random import randint
@@ -49,16 +43,6 @@ while True:
     print("\n")
   else:
     break
-
-# Players must authenticate before playing
-while True:
-  print("\n")
-  delay_print("Enter the password: ")
-  password = input("")
-  if password == "12345":
-    break
-  else:
-    print("Incorrect password")
 
 print("\n")
 print("____________________________________________________________________________")
