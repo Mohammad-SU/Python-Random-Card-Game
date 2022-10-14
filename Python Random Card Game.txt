@@ -104,11 +104,25 @@ def card_game():
     print("=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=")
     
     # Display points earned in this round and in the entire game so far
-    delay_print("%s has recieved: %s points\n" % (player1, player1_points))
-    delay_print("%s has in total: %s points" % (player1, player1_total))
+    
+    if player1_points == 1:
+      delay_print("%s has recieved: %s point\n" % (player1, player1_points))
+    else:
+      delay_print("%s has recieved: %s points\n" % (player1, player1_points))
+    if player1_total == 1:
+      delay_print("%s has in total: %s point" % (player1, player1_total))
+    else:
+      delay_print("%s has in total: %s points" % (player1, player1_total))
     print("\n")
-    delay_print("%s has recieved: %s points\n" % (player2, player2_points))
-    delay_print("%s has in total: %s points" % (player2, player2_total)) 
+    
+    if player2_points == 1:
+      delay_print("%s has recieved: %s point\n" % (player2, player2_points))
+    else:
+      delay_print("%s has recieved: %s points\n" % (player2, player2_points))
+    if player2_total == 1:
+      delay_print("%s has in total: %s point" % (player2, player2_total))
+    else:
+      delay_print("%s has in total: %s points" % (player2, player2_total))
     print("\n")
     
     # Increments 'round_num' to increase by 1 for every loop iteration
@@ -227,29 +241,13 @@ def card_game():
                         |       77   |
                         |      77    |
                         |     77     |
-                        |    77      |  
+                        |    77      |
                         |            |
                         |____________|
     """, end="", flush=True)
       
       return card_num
-    
-    # Delay for 0.25 seconds, 1 second in total, print period each time. 'flush' prevents newline
-    def delay():
-      for x in range(3):
-        sleep(0.25)
-        print(".", end="", flush=True)
-      sleep(0.25)
-    def pick_delay():
-      delay_print("Picking cards")
-      delay()
-    def pick_delay_extra():
-      delay_print("Picking card")
-      delay()
-    
-    pick_delay()
-    
-    # Pick a card twice
+
     card1 = card_art()
     card2 = card_art()
     points = card1 + card2
@@ -269,7 +267,6 @@ def card_game():
     if card1 == card2:
       print("\n")
       delay_input("A double has been picked, press 'enter' to pick a bonus card: ")
-      pick_delay_extra()
       extra_card = card_art()
       print("\n")
       delay_print("An extra %s has been picked. It will be added to the score." % (extra_card))
