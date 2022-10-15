@@ -45,8 +45,7 @@ while True:
     break
 
 print("\n")
-print("____________________________________________________________________________")
-print("\n")
+print("____________________________________________________________________________\n")
 
 # Intro/Instructions
 delay_input("Welcome, %s and %s, to the card game. Press 'enter' to continue: " % (player1, player2))
@@ -63,7 +62,6 @@ delay_print("If a double is picked, you may pick a bonus card.")
 print("\n")
 delay_print("If there is a tie at end of the game, you may play an extra round.")
 print("\n")
-
 def card_game():
 
   while True:
@@ -281,10 +279,7 @@ def card_game():
       print("\n")
       delay_print("An extra %s has been picked. It will be added to the score." % (extra_card))
       points += extra_card
-    
-    # If points go below 0, points go back up to 0
-    if points < 0:
-      points = 0
+
     return points
   
   # Game will run for 5 rounds, so 5 loops
