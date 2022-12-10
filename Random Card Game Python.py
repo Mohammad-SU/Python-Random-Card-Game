@@ -1,4 +1,4 @@
-# Card Game
+# Random Card Game
 
 # Import Python libraries
 from random import randint
