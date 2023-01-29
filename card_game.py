@@ -282,9 +282,7 @@ def card_game():
 
     return points
   
-  # Game will run for 5 rounds, so 5 loops
-  
-  
+  # Runs the game for the chosen amount of rounds
   for x in range(chosen_rounds):
     main_game()
     
