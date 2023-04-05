@@ -1,7 +1,6 @@
 # Random Card Game
 
-## Program in action:
-https://youtu.be/UU31cP--v1Y
+## Program in action: https://youtu.be/UU31cP--v1Y
 
 ![Random Card Game - Screenshot](Random_Card_Game-screenshot.png)
 
